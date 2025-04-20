@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop - Transverse Skin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --color-pink: #f9e6e7;
+      --color-cream: #fff9f5;
+      --color-gold: #d4af37;
+    }
+    .bg-pink { background-color: var(--color-pink); }
+    .bg-cream { background-color: var(--color-cream); }
+    .text-gold { color: var(--color-gold); }
+    .btn-gold {
+      background-color: var(--color-gold);
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    .btn-gold:hover {
+      background-color: #b38b2f;
+    }
+  </style>
+</head>
+<body class="bg-cream font-['Roboto'] text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-playfair text-gold font-bold">Transverse Skin</a>
+      <ul class="hidden md:flex space-x-8 text-gray-700 font-semibold">
+        <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+        <li><a href="shop.html" class="hover:text-gold transition">Shop</a></li>
+        <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
+        <li><a href="blog.html" class="hover:text-gold transition">Blog</a></li>
+        <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+      </ul>
+      <div class="hidden md:flex space-x-4">
+        <a href="login.html" class="text-gray-700 hover:text-gold transition"><i class="fas fa-user"></i></a>
+        <a href="cart.html" class="text-gray-700 hover:text-gold transition"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+      <a href="index.html" class="block py-2 text-gray-700 hover:text-gold transition">Home</a>
+      <a href="shop.html" class="block py-2 text-gray-700 hover:text-gold transition">Shop</a>
+      <a href="about.html" class="block py-2 text-gray-700 hover:text-gold transition">About Us</a>
+      <a href="blog.html" class="block py-2 text-gray-700 hover:text-gold transition">Blog</a>
+      <a href="contact.html" class="block py-2 text-gray-700 hover:text-gold transition">Contact</a>
+      <a href="login.html" class="block py-2 text-gray-700 hover:text-gold transition">Login</a>
+      <a href="cart.html" class="block py-2 text-gray-700 hover:text-gold transition">Cart</a>
+    </div>
+  </nav>
+
+  <!-- Shop Header -->
+  <header class="container mx-auto px-6 py-12 text-center">
+    <h1 class="text-4xl font-playfair font-bold text-gold mb-4">Shop Our Collection</h1>
+    <p class="text-gray-700 max-w-xl mx-auto">Explore our range of skincare, haircare, new arrivals, and best sellers tailored for your beauty needs.</p>
+  </header>
+
+  <!-- Search and Filters -->
+  <section class="container mx-auto px-6 mb-12">
+    <form id="search-form" class="flex flex-col md:flex-row md:items-center md:space-x-6 space-y-4 md:space-y-0 max-w-4xl mx-auto">
+      <input type="text" id="search-input" placeholder="Search products..." class="flex-grow border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold" />
+      <select id="category-filter" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold">
+        <option value="">All Categories</option>
+        <option value="skincare">Skincare</option>
+        <option value="haircare">Haircare</option>
+        <option value="new-arrivals">New Arrivals</option>
+        <option value="best-sellers">Best Sellers</option>
+      </select>
+      <select id="skin-type-filter" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold">
+        <option value="">All Skin Types</option>
+        <option value="normal">Normal</option>
+        <option value="dry">Dry</option>
+        <option value="oily">Oily</option>
+        <option value="combination">Combination</option>
+        <option value="sensitive">Sensitive</option>
+      </select>
+      <select id="price-filter" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold">
+        <option value="">All Prices</option>
+        <option value="0-30">Under $30</option>
+        <option value="30-50">$30 to $50</option>
+        <option value="50-100">$50 to $100</option>
+        <option value="100+">Over $100</option>
+      </select>
+      <button type="submit" class="btn-gold px-6 py-2 rounded-md font-semibold">Search</button>
+    </form>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="container mx-auto px-6 pb-16">
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <!-- Product cards will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow-inner mt-auto">
+    <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-gray-700">
+      <p class="mb-4 md:mb-0">&copy; 2024 Transverse Skin. All rights reserved.</p>
+      <div class="space-x-6 text-xl">
+        <a href="#" class="hover:text-gold transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-gold transition"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Sample product data
+    const products = [
+      {
+        id: 1,
+        name: 'Hydrating Serum',
+        category: 'skincare',
+        skinType: 'all',
+        price: 45,
+        image: 'https://images.pexels.com/photos/3771081/pexels-photo-3771081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350',
+        description: 'A lightweight serum that deeply hydrates and nourishes your skin.'
+      },
+      {
+        id: 2,
+        name: 'Nourishing Moisturizer',
+        category: 'skincare',
+        skinType: 'dry',
+        price: 38,
+        image: 'https://images.pexels.com/photos/4056532/pexels-photo-4056532.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350',
+        description: 'Rich moisturizer to restore moisture and softness.'
+      },
+      {
+        id: 3,
+        name: 'Gentle Cleanser',
+        category: 'skincare',
+        skinType: 'sensitive',
+        price: 30,
+        image: 'https://images.pexels.com/photos/4056533/pexels-photo-4056533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350',
+        description: 'Mild cleanser suitable for sensitive skin.'
+      },
+      {
+        id: 4,
+        name: 'Revitalizing Face Mask',
+        category: 'skincare',
+        skinType: 'all',
+        price: 50,
+        image: 'https://images.pexels.com/photos/4056534/pexels-photo-4056534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350',
+        description: 'Face mask to revitalize and refresh your skin.'
+      },
+      {
+        id: 5,
+        name: 'Silky Hair Oil',
+        category: 'haircare',
+        skinType: 'all',
+        price: 40,
+        image: 'https://images.pexels.com/photos/374713/pexels-photo-374713.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350',
+        description: 'Nourishing hair oil for silky smooth hair.'
+      }
+    ];
+
+    function displayProducts(filteredProducts) {
+      const grid = document.getElementById('products-grid');
+      grid.innerHTML = '';
+      if (filteredProducts.length === 0) {
+        grid.innerHTML = '<p class="text-center col-span-full text-gray-600">No products found.</p>';
+        return;
+      }
+      filteredProducts.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer';
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-2">${product.name}</h3>
+            <p class="text-pink-600 font-semibold mb-4">$${product.price.toFixed(2)}</p>
+            <p class="text-gray-600 text-sm mb-4">${product.description}</p>
+            <a href="product.html?id=${product.id}" class="btn-gold block text-center py-2 rounded-full font-semibold">View Details</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterProducts() {
+      const searchTerm = document.getElementById('search-input').value.toLowerCase();
+      const category = document.getElementById('category-filter').value;
+      const skinType = document.getElementById('skin-type-filter').value;
+      const priceRange = document.getElementById('price-filter').value;
+
+      let filtered = products.filter(product => {
+        const matchesSearch = product.name.toLowerCase().includes(searchTerm) || product.description.toLowerCase().includes(searchTerm);
+        const matchesCategory = category ? product.category === category : true;
+        const matchesSkinType = skinType ? (product.skinType === skinType || product.skinType === 'all') : true;
+        let matchesPrice = true;
+        if (priceRange) {
+          if (priceRange === '0-30') matchesPrice = product.price < 30;
+          else if (priceRange === '30-50') matchesPrice = product.price >= 30 && product.price <= 50;
+          else if (priceRange === '50-100') matchesPrice = product.price > 50 && product.price <= 100;
+          else if (priceRange === '100+') matchesPrice = product.price > 100;
+        }
+        return matchesSearch && matchesCategory && matchesSkinType && matchesPrice;
+      });
+      displayProducts(filtered);
+    }
+
+    document.getElementById('search-form').addEventListener('submit', e => {
+      e.preventDefault();
+      filterProducts();
+    });
+
+    // Initial display
+    displayProducts(products);
+  </script>
+
+</body>
+</html>
