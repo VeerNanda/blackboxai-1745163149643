@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Transverse Skin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --color-pink: #f9e6e7;
+      --color-cream: #fff9f5;
+      --color-gold: #d4af37;
+    }
+    .bg-pink { background-color: var(--color-pink); }
+    .bg-cream { background-color: var(--color-cream); }
+    .text-gold { color: var(--color-gold); }
+    .btn-gold {
+      background-color: var(--color-gold);
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    .btn-gold:hover {
+      background-color: #b38b2f;
+    }
+  </style>
+</head>
+<body class="bg-cream font-['Roboto'] text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-playfair text-gold font-bold">Transverse Skin</a>
+      <ul class="hidden md:flex space-x-8 text-gray-700 font-semibold">
+        <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+        <li><a href="shop.html" class="hover:text-gold transition">Shop</a></li>
+        <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
+        <li><a href="blog.html" class="hover:text-gold transition">Blog</a></li>
+        <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+      </ul>
+      <div class="hidden md:flex space-x-4">
+        <a href="login.html" class="text-gray-700 hover:text-gold transition"><i class="fas fa-user"></i></a>
+        <a href="cart.html" class="text-gray-700 hover:text-gold transition"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+      <a href="index.html" class="block py-2 text-gray-700 hover:text-gold transition">Home</a>
+      <a href="shop.html" class="block py-2 text-gray-700 hover:text-gold transition">Shop</a>
+      <a href="about.html" class="block py-2 text-gray-700 hover:text-gold transition">About Us</a>
+      <a href="blog.html" class="block py-2 text-gray-700 hover:text-gold transition">Blog</a>
+      <a href="contact.html" class="block py-2 text-gray-700 hover:text-gold transition">Contact</a>
+      <a href="login.html" class="block py-2 text-gray-700 hover:text-gold transition">Login</a>
+      <a href="cart.html" class="block py-2 text-gray-700 hover:text-gold transition">Cart</a>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-6 py-16 max-w-4xl text-center">
+    <h1 class="text-4xl font-playfair font-bold text-gold mb-8">Our Philosophy & Values</h1>
+    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+      At Transverse Skin, we believe that beauty comes from nature and science working in harmony. Our products are crafted with premium natural ingredients, backed by scientific research to ensure effectiveness and safety.
+    </p>
+    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+      We are committed to sustainability, cruelty-free practices, and transparency. Our mission is to empower you to feel confident and radiant in your own skin.
+    </p>
+    <p class="text-gray-700 text-lg leading-relaxed">
+      Join us on this journey to glowing, healthy skin with products designed to nurture and protect.
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow-inner mt-auto">
+    <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-gray-700">
+      <p class="mb-4 md:mb-0">&copy; 2024 Transverse Skin. All rights reserved.</p>
+      <div class="space-x-6 text-xl">
+        <a href="#" class="hover:text-gold transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-gold transition"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
